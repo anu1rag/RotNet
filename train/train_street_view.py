@@ -21,7 +21,7 @@ train_filenames, test_filenames = get_street_view_filenames(data_path)
 print(len(train_filenames), 'train samples')
 print(len(test_filenames), 'test samples')
 
-model_name = 'rotnet_street_view_resnet50'
+model_name = 'aadhaar_pan_rotation_detector'
 
 # number of classes
 nb_classes = 360
@@ -74,7 +74,7 @@ model.fit_generator(
         batch_size=batch_size,
         preprocess_func=preprocess_input,
         crop_center=True,
-        crop_largest_rect=True,
+        crop_largest_rect=False,
         shuffle=True
     ),
     steps_per_epoch=len(train_filenames) / batch_size,
